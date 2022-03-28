@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style type="text/css">
+button{
+padding: 10px;
+}
+
+span{
+
+color: red;
+font-style: italic;
+}
+
+form{
+display: table;
+}
+
+label {
+	display: table-cell;
+	margin: 6px;
+	text-align: left;
+}
+
+input[type=text],input[type=password],select textarea {
+	
+	width: 200px;
+	margin: 5px;
+	
+}
+form div div
+{
+  display:table-cell;
+}
+</style>
+</head>
+<body>
+<h1>Welcome To Admin Registration Page</h1>
+<div align="center">
+<form action="#" th:action="@{/adminreg}" method="post" th:object="${admin}">
+
+<div>
+<label>UserName</label>
+<input type="text" th:field="*{username}"/><br>
+<span th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Name Error</span>
+</div>
+
+<div>
+<label>Password</label>
+<input type="text" th:field="*{password}"/><br>
+<span th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</span>
+
+<div><button type="Submit">Submit</button></div>
+
+</div>
+</form>
+</div>
+</body>
+</html>

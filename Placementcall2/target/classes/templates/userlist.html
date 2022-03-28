@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>List Users</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container text-center">
+    <div>
+        <form th:action="@{/reg}" method="post">
+           
+            <input type="submit" value="Sign Out" />
+        </form>
+    </div>
+    <div>
+        <h1>List of Users</h1>
+    </div>
+     
+    <div>
+    <table border="1">
+       
+            <thead class="thead-dark">
+                <tr>
+                    <th>User Name</th>
+                    <th>Password</th>
+                    <th>Address</th>
+                    <th>Gender</th>
+                    <th>Phone_no</th>
+                    <th>Email</th>
+                    <th>Birthday</th>
+                    <th>HSC</th>
+                    <th>SSC</th>
+                    <th>Graduation_Marks</th>
+                    <th>Passout_Year</th>
+                    <th>Age</th>
+                </tr>
+                
+            </thead>
+            
+            <tbody>
+                <tr th:each="user: ${user}">
+                    <td th:text="${user.username}">UserName</td>
+                    <td th:text="${user.password}">Password</td>
+                    <td th:text="${user.address}">Address</td>
+                    <td th:text="${user.gender}">Gender</td>
+                    <td th:text="${user.phone_no}">Phone_no</td>
+                    <td th:text="${user.email}">Email</td>
+                    <td th:text="${user.birthday}">Birthday</td>
+                    <td th:text="${user.HSC}">HSC</td>
+                    <td th:text="${user.SSC}">SSC</td>
+                    <td th:text="${user.graduation_marks}">Graduation_Marks</td>
+                    <td th:text="${user.passout_year}">Passout_Marks</td>
+                    <td th:text="${user.age}">Age</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style type="text/css">
+button{
+padding: 10px;
+}
+
+span{
+
+color: red;
+font-style: italic;
+}
+
+form{
+display: table;
+}
+
+label {
+	display: table-cell;
+	margin: 6px;
+	text-align: left;
+}
+
+input[type=text],input[type=password],select textarea {
+	
+	width: 200px;
+	margin: 5px;
+	
+}
+form div div
+{
+  display:table-cell;
+}
+</style>
+</head>
+<body>
+<h1>Welcome To User Registration Page</h1>
+<div align="center">
+<form action="#" th:action="@{/reg}" method="post" th:object="${user}">
+
+<div>
+<label>UserName</label>
+<input type="text" th:field="*{username}"/><br>
+<span th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Name Error</span>
+</div>
+
+<div>
+<label>Password</label>
+<input type="text" th:field="*{password}"/><br>
+<span th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</span>
+ 
+
+</div>
+
+<div>
+<label>Address</label>
+<input type="text" th:field="*{address}"/><br>
+<span th:if="${#fields.hasErrors('address')}" th:errors="*{address}">address Error</span>
+</div>
+
+<div>
+<label>Gender</label>
+<input type="text" th:field="*{gender}"/><br>
+<span th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}">Gender Error</span>
+</div>
+
+<div>
+<label>Phone_no</label>
+<input type="text" th:field="*{phone_no}"/><br>
+<span th:if="${#fields.hasErrors('phone_no')}" th:errors="*{phone_no}">Phone_No Error</span>
+</div>
+
+<div>
+<label>Email</label>
+<input type="text" th:field="*{email}"/><br>
+<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</span>
+</div>
+
+<div>
+<label>Birthday</label>
+<input type="text" th:field="*{birthday}"/><br>
+<span th:if="${#fields.hasErrors('birthday')}" th:errors="*{birthday}">Date Error</span>
+</div>
+
+<div>
+<label>HSC</label>
+<input type="text" th:field="*{HSC}"/><br>
+<span th:if="${#fields.hasErrors('HSC')}" th:errors="*{HSC}">HSC Error</span>
+</div>
+
+
+<div>
+<label>SSC</label>
+<input type="text" th:field="*{SSC}"/><br>
+<span th:if="${#fields.hasErrors('SSC')}" th:errors="*{SSC}">SSC Error</span>
+</div>
+
+<div>
+<label>Graduation_Marks</label>
+<input type="text" th:field="*{graduation_marks}"/><br>
+<span th:if="${#fields.hasErrors('graduation_marks')}" th:errors="*{graduation_marks}">Graduation_Marks Error</span>
+</div>
+
+<div>
+<label>Passout_year</label>
+<input type="text" th:field="*{passout_year}"/><br>
+<span th:if="${#fields.hasErrors('passout_year')}" th:errors="*{passout_year}">Passout_Year Error</span>
+</div>
+
+
+<div>
+<label>Age</label>
+<input type="text" th:field="*{age}"/><br>
+<span th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Age Error</span>
+</div>
+<div><button type="submit">Register</button></div>
+<div><button type="submit">Sign in</button></div>
+
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style type="text/css">
+button{
+padding: 10px;
+}
+
+span{
+
+color: red;
+font-style: italic;
+}
+
+form{
+display: table;
+}
+
+label {
+	display: table-cell;
+	margin: 6px;
+	text-align: left;
+}
+
+input[type=text],input[type=password],select textarea {
+	
+	width: 200px;
+	margin: 5px;
+	
+}
+form div div
+{
+  display:table-cell;
+}
+</style>
+</head>
+<body>
+<h1>Welcome To Company Registration Page</h1>
+
+<div align="center">
+<form action="#" th:action="@{/comregister}" method="post" th:object="${company}">
+
+<div>
+<label>Name</label>
+<input type="text" th:field="*{name}"/><br>
+<span th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</span>
+</div>
+
+<div>
+<label>Email_id</label>
+<input type="text" th:field="*{email_id}"/><br>
+<span th:if="${#fields.hasErrors('email_id')}" th:errors="*{email_id}">Email_id Error</span>
+</div>
+
+<div>
+<label>Criteria</label>
+<input type="text" th:field="*{criteria}"/><br>
+<span th:if="${#fields.hasErrors('criteria')}" th:errors="*{criteria}">Criteria Error</span>
+</div>
+
+<div>
+<label>Salary</label>
+<input type="text" th:field="*{salary}"/><br>
+<span th:if="${#fields.hasErrors('salary')}" th:errors="*{salary}">Salary Error</span>
+</div>
+
+<div>
+<label>Post</label>
+<input type="text" th:field="*{post}"/><br>
+<span th:if="${#fields.hasErrors('post')}" th:errors="*{post}">post Error</span>
+</div>
+
+<div>
+<label>Phone_NO</label>
+<input type="text" th:field="*{phone_no}"/><br>
+<span th:if="${#fields.hasErrors('phone_no')}" th:errors="*{phone_no}">Phone_no Error</span>
+</div>
+
+<div>
+<label>City</label>
+<input type="text" th:field="*{city}"/><br>
+<span th:if="${#fields.hasErrors('city')}" th:errors="*{city}">city Error</span>
+</div>
+
+
+
+<div><button type="Submit">Register</button></div>
+</form>
+</div>
+</body>
+</html>
